@@ -13,6 +13,12 @@ func RegisterRoute(server *raiden.Server) {
 		raiden.NewRouteFromController(&raiden_controllers.StateReadyController{}, []string{fasthttp.MethodPost}),
 		{
 			Type:       raiden.RouteTypeCustom,
+			Path:       "/auth",
+			Methods:    []string{fasthttp.MethodPost},
+			Controller: &controllers.AuthController{},
+		},
+		{
+			Type:       raiden.RouteTypeCustom,
 			Path:       "/hello",
 			Methods:    []string{fasthttp.MethodGet},
 			Controller: &controllers.HelloWorldController{},
