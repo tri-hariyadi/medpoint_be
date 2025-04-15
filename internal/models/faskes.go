@@ -21,13 +21,13 @@ type Faskes struct {
 	Acl string `json:"-" read:"" write:""`
 
 	// Relations
-	DoctorScheduleFaskes                   []*DoctorSchedules `json:"doctor_schedule_faskes,omitempty" onUpdate:"no action" onDelete:"set null" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
-	DoctorSchedulesThroughReservationFaske []*DoctorSchedules `json:"doctor_schedules_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
-	DoctorsThroughDoctorSchedulesFaske     []*Doctor          `json:"doctors_through_doctor_schedules_faske,omitempty" join:"joinType:manyToMany;through:doctor_schedules;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
-	DoctorsThroughReservationFaske         []*Doctor          `json:"doctors_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
-	FaskesAddressAddress                   *FaskesAddress     `json:"faskes_address_address,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:address_id"`
-	PoliFaskes                             []*Poli            `json:"poli_faskes,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
-	ReservationFaskes                      []*Reservation     `json:"reservation_faskes,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
-	ServicesThroughReservationFaske        []*Services        `json:"services_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
-	UsersThroughReservationFaske           []*Users           `json:"users_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
+	DoctorsThroughReservationFaske   []*Doctors     `json:"doctors_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
+	DoctorsThroughSchedulesFaske     []*Doctors     `json:"doctors_through_schedules_faske,omitempty" join:"joinType:manyToMany;through:schedules;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
+	FaskesAddressAddress             *FaskesAddress `json:"faskes_address_address,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:address_id"`
+	PoliFaskes                       []*Poli        `json:"poli_faskes,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
+	ReservationFaskes                []*Reservation `json:"reservation_faskes,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
+	ScheduleFaskes                   []*Schedules   `json:"schedule_faskes,omitempty" onUpdate:"no action" onDelete:"set null" join:"joinType:hasMany;primaryKey:id;foreignKey:faskes_id"`
+	SchedulesThroughReservationFaske []*Schedules   `json:"schedules_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
+	ServicesThroughReservationFaske  []*Services    `json:"services_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
+	UsersThroughReservationFaske     []*Users       `json:"users_through_reservation_faske,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:faskes_id;targetPrimaryKey:id;targetForeign:faskes_id"`
 }

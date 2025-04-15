@@ -25,11 +25,11 @@ type Reservation struct {
 	Acl string `json:"-" read:"" write:""`
 
 	// Relations
-	Doctor                                  *Doctor           `json:"doctor,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:doctor_id"`
-	DoctorScheduleSchedule                  *DoctorSchedules  `json:"doctor_schedule_schedule,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:schedule_id"`
-	DoctorsThroughEPrescriptionsReservation []*Doctor         `json:"doctors_through_e_prescriptions_reservation,omitempty" join:"joinType:manyToMany;through:e_prescriptions;sourcePrimaryKey:id;sourceForeignKey:reservation_id;targetPrimaryKey:id;targetForeign:reservation_id"`
+	Doctor                                  *Doctors          `json:"doctor,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:doctor_id"`
+	DoctorsThroughEPrescriptionsReservation []*Doctors        `json:"doctors_through_e_prescriptions_reservation,omitempty" join:"joinType:manyToMany;through:e_prescriptions;sourcePrimaryKey:id;sourceForeignKey:reservation_id;targetPrimaryKey:id;targetForeign:reservation_id"`
 	EPrescriptionReservations               []*EPrescriptions `json:"e_prescription_reservations,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasMany;primaryKey:id;foreignKey:reservation_id"`
 	Faske                                   *Faskes           `json:"faske,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:faskes_id"`
+	Schedule                                *Schedules        `json:"schedule,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:schedule_id"`
 	Service                                 *Services         `json:"service,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:service_id"`
 	TransactionReservations                 []*Transaction    `json:"transaction_reservations,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:reservation_id"`
 	User                                    *Users            `json:"user,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasOne;primaryKey:id;foreignKey:user_id"`
