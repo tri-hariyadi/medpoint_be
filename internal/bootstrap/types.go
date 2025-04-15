@@ -3,8 +3,23 @@ package bootstrap
 
 import (
 	"github.com/sev-2/raiden/pkg/resource"
+	"medpoint/internal/types"
 )
 
 func RegisterTypes() {
-	resource.RegisterTypes()
+	resource.RegisterTypes(
+		&types.Doctor{},
+		&types.DoctorSchedules{},
+		&types.EPrescriptions{},
+		&types.Faskes{},
+		&types.FaskesAddress{},
+		&types.Poli{},
+		&types.Reservation{},
+		&types.ReservationStatusEnum{},
+		&types.RoleEnum{},
+		&types.Services{},
+		&types.Transaction{},
+		&types.TransactionStatusEnum{},
+		&types.Users{},
+	)
 }
