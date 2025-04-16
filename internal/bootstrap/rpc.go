@@ -3,8 +3,11 @@ package bootstrap
 
 import (
 	"github.com/sev-2/raiden/pkg/resource"
+	"medpoint/internal/rpc"
 )
 
 func RegisterRpc() {
-	resource.RegisterRpc()
+	resource.RegisterRpc(
+		&rpc.HandleNewUser{},
+	)
 }

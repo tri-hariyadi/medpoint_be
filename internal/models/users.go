@@ -27,11 +27,11 @@ type Users struct {
 	Acl string `json:"-" read:"" write:""`
 
 	// Relations
-	DoctorUsers                           []*Doctor          `json:"doctor_users,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasMany;primaryKey:id;foreignKey:user_id"`
-	DoctorSchedulesThroughReservationUser []*DoctorSchedules `json:"doctor_schedules_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
-	DoctorsThroughReservationUser         []*Doctor          `json:"doctors_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
-	FaskesThroughReservationUser          []*Faskes          `json:"faskes_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
-	ReservationUsers                      []*Reservation     `json:"reservation_users,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:user_id"`
-	ServicesThroughReservationUser        []*Services        `json:"services_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
-	UserAuth                              *Users             `json:"user_auth,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:auth_id"`
+	DoctorUsers                     []*Doctors     `json:"doctor_users,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasMany;primaryKey:id;foreignKey:user_id"`
+	DoctorsThroughReservationUser   []*Doctors     `json:"doctors_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
+	FaskesThroughReservationUser    []*Faskes      `json:"faskes_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
+	ReservationUsers                []*Reservation `json:"reservation_users,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:user_id"`
+	SchedulesThroughReservationUser []*Schedules   `json:"schedules_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
+	ServicesThroughReservationUser  []*Services    `json:"services_through_reservation_user,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:user_id;targetPrimaryKey:id;targetForeign:user_id"`
+	UserAuth                        *Users         `json:"user_auth,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:auth_id"`
 }

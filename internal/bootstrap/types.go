@@ -8,8 +8,7 @@ import (
 
 func RegisterTypes() {
 	resource.RegisterTypes(
-		&types.Doctor{},
-		&types.DoctorSchedules{},
+		&types.Doctors{},
 		&types.EPrescriptions{},
 		&types.Faskes{},
 		&types.FaskesAddress{},
@@ -17,6 +16,7 @@ func RegisterTypes() {
 		&types.Reservation{},
 		&types.ReservationStatusEnum{},
 		&types.RoleEnum{},
+		&types.Schedules{},
 		&types.Services{},
 		&types.Transaction{},
 		&types.TransactionStatusEnum{},

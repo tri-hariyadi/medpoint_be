@@ -21,6 +21,6 @@ type EPrescriptions struct {
 	Acl string `json:"-" read:"" write:""`
 
 	// Relations
-	Doctor      *Doctor      `json:"doctor,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:doctor_id"`
+	Doctor      *Doctors     `json:"doctor,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:doctor_id"`
 	Reservation *Reservation `json:"reservation,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:reservation_id"`
 }

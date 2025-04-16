@@ -22,10 +22,10 @@ type Services struct {
 	Acl string `json:"-" read:"" write:""`
 
 	// Relations
-	DoctorSchedulesThroughReservationService []*DoctorSchedules `json:"doctor_schedules_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
-	DoctorsThroughReservationService         []*Doctor          `json:"doctors_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
-	FaskesThroughReservationService          []*Faskes          `json:"faskes_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
-	Poli                                     *Poli              `json:"poli,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:poli_id"`
-	ReservationServices                      []*Reservation     `json:"reservation_services,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:service_id"`
-	UsersThroughReservationService           []*Users           `json:"users_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
+	DoctorsThroughReservationService   []*Doctors     `json:"doctors_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
+	FaskesThroughReservationService    []*Faskes      `json:"faskes_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
+	Poli                               *Poli          `json:"poli,omitempty" onUpdate:"no action" onDelete:"cascade" join:"joinType:hasOne;primaryKey:id;foreignKey:poli_id"`
+	ReservationServices                []*Reservation `json:"reservation_services,omitempty" onUpdate:"no action" onDelete:"no action" join:"joinType:hasMany;primaryKey:id;foreignKey:service_id"`
+	SchedulesThroughReservationService []*Schedules   `json:"schedules_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
+	UsersThroughReservationService     []*Users       `json:"users_through_reservation_service,omitempty" join:"joinType:manyToMany;through:reservation;sourcePrimaryKey:id;sourceForeignKey:service_id;targetPrimaryKey:id;targetForeign:service_id"`
 }

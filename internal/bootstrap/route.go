@@ -17,14 +17,14 @@ func RegisterRoute(server *raiden.Server) {
 			Path:       "/doctors",
 			Methods:    []string{},
 			Controller: &controllers.DoctorController{},
-			Model:      models.Doctor{},
+			Model:      models.Doctors{},
 		},
 		{
 			Type:       raiden.RouteTypeRest,
 			Path:       "/schedules",
 			Methods:    []string{},
 			Controller: &controllers.ScheduleController{},
-			Model:      models.DoctorSchedules{},
+			Model:      models.Schedules{},
 		},
 	})
 }

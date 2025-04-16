@@ -8,13 +8,13 @@ import (
 
 func RegisterModels() {
 	resource.RegisterModels(
-		&models.Doctor{},
-		&models.DoctorSchedules{},
+		&models.Doctors{},
 		&models.EPrescriptions{},
 		&models.Faskes{},
 		&models.FaskesAddress{},
 		&models.Poli{},
 		&models.Reservation{},
+		&models.Schedules{},
 		&models.Services{},
 		&models.Transaction{},
 		&models.Users{},

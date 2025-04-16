@@ -8,5 +8,5 @@ import (
 type ScheduleController struct {
 	raiden.ControllerBase
 	Http  string `path:"/schedules" type:"rest"`
-	Model models.DoctorSchedules
+	Model models.Schedules
 }
